@@ -16,7 +16,7 @@ class Bitly(http.Controller):
 
         return options[0]['access_token_bitly']
 
-    @http.route('/webhook/sematics_api/bitly/shorten', type='http')
+    @http.route('/sematics_api/bitly/shorten', type='http')
     def shorten(self, **params):
         url         = urllib.parse.quote(params['url'])
 

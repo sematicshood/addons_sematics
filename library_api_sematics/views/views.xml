@@ -1,25 +1,45 @@
 <flectra>
   <data>
-  <record model="ir.ui.view" id="library_api_sematics_form_view">
+    <record model="ir.ui.view" id="library_api_sematics_tree_view">
+      <field name="name">API Configuration</field>
+      <field name="model">library_api_sematics</field>
+      <field name="arch" type="xml">
+        <tree create="false">
+          <field name="host"/>
+          <field name="access_token_bitly"/>
+          <field name="midtrans_merchant_id"/>
+          <field name="midtrans_client_key"/>
+          <field name="midtrans_server_key"/>
+          <field name="production_midtrans"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="library_api_sematics_form_view">
       <field name="name">API Configuration</field>
       <field name="model">library_api_sematics</field>
       <field name="res_id">1</field>
       <field name="arch" type="xml">
         <form create="false">
           <sheet>
-            <field name="access_token_bitly"/>
+            <group>
+              <h1>Library configuration</h1>
+              <field name="host" placeholder="Host Applikasi"/>
+            </group>
+            <group>
+              <h1>API bit.ly configuration</h1>
+              <field name="access_token_bitly" placeholder="API Access Token Bitly.com"/>
+            </group>
+            <group>
+              <h1>API midtrans configuration</h1>
+              <field name="midtrans_merchant_id" placeholder="Merchant ID"/>
+              <field name="midtrans_client_key" placeholder="Client Key"/>
+              <field name="midtrans_server_key" placeholder="Server Key"/>
+              <field name="production_midtrans" placeholder="Production Mode"/>
+            </group>
+            <hr/>
           </sheet>
         </form>
-      </field>
-    </record>
-
-    <record model="ir.ui.view" id="library_api_sematics_tree_view">
-      <field name="name">API Configuration</field>
-      <field name="model">library_api_sematics</field>
-      <field name="arch" type="xml">
-        <tree create="false">
-          <field name="access_token_bitly"/>
-        </tree>
       </field>
     </record>
     

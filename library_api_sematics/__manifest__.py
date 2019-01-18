@@ -20,12 +20,16 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'sale', 'mail', 'account'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
+        'data/mail_invoice.xml',
+    ],
+    "external_dependencies": {"python": [
+        'midtransclient',
     ],
     # only loaded in demonstration mode
     'demo': [
